@@ -17,25 +17,27 @@ $timer->lap();
 echo json_encode([$timer->getDuration(), $timer->getMemory()], JSON_PRETTY_PRINT);
 
 for ($i = 0; $i < 1000; $i++) {
-    // 1 call — around 10 milliseconds (0.01 sec.). More is better.
+    // 1 call — around 10 milliseconds (0.01 sec.). More calls work better.
     $record = $reader->city($ip);
 }
 
 $timer->stop();
 echo json_encode([$timer->getDuration(), $timer->getMemory()], JSON_PRETTY_PRINT);
 
+/*
 
+print($record->country->isoCode . "\n");
+print($record->country->name . "\n");
+print($record->country->names['zh-CN'] . "\n");
 
-//print($record->country->isoCode . "\n");
-//print($record->country->name . "\n");
-//print($record->country->names['zh-CN'] . "\n");
-//
-//print($record->mostSpecificSubdivision->name . "\n");
-//print($record->mostSpecificSubdivision->isoCode . "\n");
-//
-//print($record->city->name . "\n");
-//
-//print($record->postal->code . "\n");
-//
-//print($record->location->latitude . "\n");
-//print($record->location->longitude . "\n");
+print($record->mostSpecificSubdivision->name . "\n");
+print($record->mostSpecificSubdivision->isoCode . "\n");
+
+print($record->city->name . "\n");
+
+print($record->postal->code . "\n");
+
+print($record->location->latitude . "\n");
+print($record->location->longitude . "\n");
+
+*/
